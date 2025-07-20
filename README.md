@@ -18,8 +18,7 @@ data = [
 
 "Random" is a heading, it's just a nice way to group the URLs in the terminal when showing the report, it can be any descriptive string you want.
 
-The url "chasta.in" is configured to expect that the contents of its page when md5 hashed matche the one specified, if it doesn't it will display a warning, and the new md5 value for it.
+The other entries represent URLs to monitor. The first column is the name for reporting purposes, the second obviously is the URL you want to monitor, and the third (optional) is an md5 hash of the contents of the page which enables comparing the current contents of the page with a known good version of the contents.
 
-The md5 comparison is opt-in, no warnings or errors will be displayed if you don't want to perform that comparison, but it can be handy when you know the contents of the page should not change.
-
+If you want to compare the md5 hash but don't have it, just enter a fake value and save it, then run the code and the report will show you the current md5 hash which you can then just copy over the fake value.
 
