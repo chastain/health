@@ -5,13 +5,19 @@
 
 import urllib.request
 import urllib.error
-
+import json
 import hashlib
 from os import system, name
 from time import sleep, localtime, strftime
 
-refresh_after_seconds = 60 # Clear screen and re-run this script every N seconds.
-timeout_in_seconds = 10 # We request timeout
+# Load the config file so we can pull values from it below
+with open('config.json', 'r') as file:
+    json_config_data = json.load(file)
+
+# Clear screen and re-run this script every N seconds.
+refresh_after_seconds = json_config_data["refresh_after_seconds"]
+# How long before we time out a request
+timeout_in_seconds = json_config_data["timeout_in_seconds"]
 
 class colors:
     HEADER = '\033[95m'
@@ -29,13 +35,7 @@ class colors:
 # Value 2: URL
 # Value 3: md5 sum of contents of the page. Optional, if not included http status code is the only criteria.
 # Tip: to generate an initial md5 sum just enter a fake value for it in the table and it will be generated and written to the terminal.
-data = [
-    ["Random"],
-    ["chasta.in", "https://chasta.in", "fake"],
-    ["google", "https://www.google.com"],
-    ["aws", "https://www.aws.com"],
-    ["duck", "https://www.duck.com"],
-]
+data = json_config_data["data"]
 
 def verify(record):
     try:
@@ -69,10 +69,10 @@ if __name__ == "__main__":
     try:
         while True:
 
-            _ = system("cls") if name == "nt" else system("clear")
+           # _ = system("cls") if name == "nt" else system("clear")
 
             print("\n" + colors.OKBLUE + "URL Health Tester" + colors.ENDC)
-            print("\n" + colors.OKBLUE + "(Ctrl+C to exit)" + colors.ENDC + "\n")
+            print(colors.OKBLUE + "(Ctrl+C to exit)" + colors.ENDC + "\n")
             print("Updated: " + strftime("%Y-%m-%d %H:%M:%S", localtime()) + "\n")
 
             for id, record in enumerate(data):

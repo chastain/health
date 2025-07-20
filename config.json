@@ -1,0 +1,13 @@
+{
+	"refresh_after_seconds": 60,
+	"timeout_in_seconds": 10,
+	"data": [
+    		["Random"],
+    		["chasta.in", "https://chasta.in", "40386eeefe7cc450fcc797bab8fba754"],
+    		["google", "https://www.google.com"],
+    		["aws", "https://www.aws.com"],
+    		["duck", "https://www.duck.com"],
+		["ycombinator", "https://news.ycombinator.com"]
+	]
+
+}
