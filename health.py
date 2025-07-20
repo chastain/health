@@ -31,7 +31,7 @@ class colors:
 # Tip: to generate an initial md5 sum just enter a fake value for it in the table and it will be generated and written to the terminal.
 data = [
     ["Random"],
-    ["chasta.in", "http://chasta.in","d525675394daaef93fe810fcbe8c4dbd"],
+    ["chasta.in", "https://chasta.in", "fake"],
     ["google", "https://www.google.com"],
     ["aws", "https://www.aws.com"],
     ["duck", "https://www.duck.com"],
@@ -66,34 +66,39 @@ def verify(record):
 
 if __name__ == "__main__":
 
-    while True:
+    try:
+        while True:
 
-        _ = system("cls") if name == "nt" else system("clear")
+            _ = system("cls") if name == "nt" else system("clear")
 
-        print("\n" + colors.OKBLUE + "URL Health Tester" + colors.ENDC + "\n")
-        print("Updated: " + strftime("%Y-%m-%d %H:%M:%S", localtime()) + "\n")
+            print("\n" + colors.OKBLUE + "URL Health Tester" + colors.ENDC)
+            print("\n" + colors.OKBLUE + "(Ctrl+C to exit)" + colors.ENDC + "\n")
+            print("Updated: " + strftime("%Y-%m-%d %H:%M:%S", localtime()) + "\n")
 
-        for id, record in enumerate(data):
+            for id, record in enumerate(data):
 
-            results = verify(record)
+                results = verify(record)
 
-            if results == "heading":
-                color = colors.UNDERLINE + colors.BOLD
-            elif results == "success":
-                color = colors.OKGREEN
-            elif results == "redirection":
-                color = colors.OKCYAN
-            elif results == "error":
-                color = colors.FAIL
-            else:
-                color = colors.WARNING
+                if results == "heading":
+                    color = colors.UNDERLINE + colors.BOLD
+                elif results == "success":
+                    color = colors.OKGREEN
+                elif results == "redirection":
+                    color = colors.OKCYAN
+                elif results == "error":
+                    color = colors.FAIL
+                else:
+                    color = colors.WARNING
 
-            if results == "heading":
-                n = "\n" if id > 1 else ""
-                print(n + color + record[0] + colors.ENDC + "\n")
-            else:
-                print(" -> " + color + record[0] + " " + colors.ENDC + colors.GREY + record[1] + colors.ENDC)
-                if results.startswith("md5 mismatch:"):
-                    print("     " + results)
+                if results == "heading":
+                    n = "\n" if id > 1 else ""
+                    print(n + color + record[0] + colors.ENDC + "\n")
+                else:
+                    print(" -> " + color + record[0] + " " + colors.ENDC + colors.GREY + record[1] + colors.ENDC)
+                    if results.startswith("md5 mismatch:"):
+                        print("     " + results)
 
-        sleep(refresh_after_seconds)
+            sleep(refresh_after_seconds)
+
+    except KeyboardInterrupt:
+        pass
