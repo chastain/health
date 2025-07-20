@@ -4,7 +4,7 @@ This is a simple script that monitors URLs (configured in the data array in the 
 
 By default, the script looks only at the http status codes, but it can optionally compare an md5 hash of the contents of the page with one if you configure that in the data section. 
 
-### Example Configuration
+### Example config.json
 
 ```
 {
