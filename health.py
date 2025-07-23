@@ -69,7 +69,7 @@ if __name__ == "__main__":
     try:
         while True:
 
-           # _ = system("cls") if name == "nt" else system("clear")
+            _ = system("cls") if name == "nt" else system("clear")
 
             print("\n" + colors.OKBLUE + "URL Health Tester" + colors.ENDC)
             print(colors.OKBLUE + "(Ctrl+C to exit)" + colors.ENDC + "\n")
