@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # URL Health Monitor
 # This code checks http status codes and md5 checksums of URLs and displays a basic report in the terminal.
