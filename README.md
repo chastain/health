@@ -4,7 +4,7 @@
 
 ![Screenshot](screenshot.png)
 
-Dead simple URL monitoring python script, lets you keep an eye on sites you're interested in.
+Basic URL monitoring python script, lets you keep an eye on the response status of sites you're interested in.
 
 By default, the script looks only at the http status codes, but it can optionally compare the page contents to an md5 hash, which is handy when the contents of the URL are known and should not change.
 
@@ -28,13 +28,13 @@ By default, the script looks only at the http status codes, but it can optionall
 	]
 }
 ```
-**refresh_seconds** holds the number of seconds before this code reruns and retests everything.
+**refresh_seconds** The number of seconds before this code reruns and retests everything.
 
-**timeout_seconds** holds a number of seconds we want to wait after a request for a response.
+**timeout_seconds** The number of seconds we want to wait after a request for a response.
 
-**data** is an array of urls to monitor.
+**data** Array of urls to monitor.
 
-    "News Sites" and "Other" in this example are just report headings, they're optional, but a nice way to group the URLs in the terminal when showing the report.They can be any descriptive string you want. The script knows its a header because there's no URL specified.
+Note: "News Sites" and "Other" in this example are just report headings, they're optional, but a nice way to group the URLs in the terminal when showing the report.They can be any descriptive string you want. The script knows its a header because there's no URL specified.
 
 The other entries represent URLs to monitor. The first column is the name for reporting purposes, the second obviously is the URL you want to monitor, and the third (optional) is an md5 hash of the contents of the page which enables comparing the current contents of the page with a known good version of the contents.
 
