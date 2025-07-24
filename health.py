@@ -73,10 +73,6 @@ def verify(record):
         return err.code, "error"
     except Exception as ex:
         # In case the error was in the library we should respond appropriately
-        #return None, "error"
-        #template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-        #message = template.format(type(ex).__name__, ex.args)
-        #print(message)
         return "???", "error"
 
 if __name__ == "__main__":
