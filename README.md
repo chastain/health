@@ -17,7 +17,7 @@ By default, the script looks only at the http status codes, but it can optionall
     		["Engadget", "https://www.engadget.com/"],
     		["chasta.in", "https://chasta.in", "40386eeefe7cc450fcc797bab8fba754"],
 	    	["Other"],
-		    ["Bad", "https://thisfakepagedoesnotexist.com"],
+	        ["Bad", "https://thisfakepagedoesnotexist.com"],
     		["Simulated not found", "https://mock.httpstatus.io/404"],
 	    	["Simulated error", "https://mock.httpstatus.io/501"]
 	]
