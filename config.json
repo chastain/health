@@ -1,13 +1,17 @@
 {
-	"refresh_after_seconds": 60,
-	"timeout_in_seconds": 10,
+	"refresh_seconds": 60,
+	"timeout_seconds": 10,
 	"data": [
-    		["Random"],
-    		["chasta.in", "https://chasta.in", "40386eeefe7cc450fcc797bab8fba754"],
-    		["google", "https://www.google.com"],
-    		["aws", "https://www.aws.com"],
-    		["duck", "https://www.duck.com"],
-		["ycombinator", "https://news.ycombinator.com"]
+    		["News Sites"],
+    		["Hacker News", "https://news.ycombinator.com/"],
+    		["Bleeping Computer", "https://www.bleepingcomputer.com/"],
+    		["Gizmodo", "https://gizmodo.com/"],
+    		["Engadget", "https://www.engadget.com/"],
+		["chasta.in", "https://chasta.in", "fake"],
+		["Other"],
+		["Bad", "https://thisfakepagedoesnotexist.com"],
+		["Simulated not found", "https://mock.httpstatus.io/404"],
+		["Simulated error", "https://mock.httpstatus.io/501"]
 	]
 
 }
