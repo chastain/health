@@ -1,5 +1,7 @@
 # health.py
 
+### Simple URL health monitor for the terminal.
+
 ![Screenshot](screenshot.png)
 
 This is a simple script that monitors URLs (configured in the data array in the code) and displays a nice report in the terminal
